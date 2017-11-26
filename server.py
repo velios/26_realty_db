@@ -66,9 +66,9 @@ def ads_list():
 
     filtered_query = apply_filters(Ads.query, filters)
 
-    POSTS_PER_PAGE = 15
+    posts_per_page = 15
     ads = (filtered_query
-           .paginate(int(page), POSTS_PER_PAGE, False))
+           .paginate(int(page), posts_per_page, False))
     return render_template('ads_list.html', ads=ads)
 
 
